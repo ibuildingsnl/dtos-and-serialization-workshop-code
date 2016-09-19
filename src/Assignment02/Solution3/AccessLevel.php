@@ -25,6 +25,11 @@ final class AccessLevel
         return new AccessLevel(self::LOW);
     }
 
+    public static function deserialize(array $data) : AccessLevel
+    {
+        return new self($data['level']);
+    }
+
     public function isHigh() : bool
     {
         return $this->level == self::HIGH;

@@ -25,4 +25,13 @@ class AccessLevelTest extends \PHPUnit_Framework_TestCase
         $this->assertTrue($level->isLow());
         $this->assertFalse($level->isHigh());
     }
+
+    /**
+     * @test
+     */
+    public function it_can_deserialize_itself()
+    {
+        $accessLevel = AccessLevel::deserialize(['level' => 1]);
+        $this->assertEquals(AccessLevel::low(), $accessLevel);
+    }
 }
