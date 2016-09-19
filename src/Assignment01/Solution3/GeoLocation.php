@@ -19,14 +19,4 @@ final class GeoLocation
         Assertion::lessOrEqualThan($longitude, 180);
         $this->longitude = $longitude;
     }
-
-    public function latitude() : float
-    {
-        return $this->latitude;
-    }
-
-    public function longitude() : float
-    {
-        return $this->longitude;
-    }
 }
