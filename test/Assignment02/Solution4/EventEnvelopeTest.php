@@ -35,6 +35,6 @@ class EventEnvelopeTest extends \PHPUnit_Framework_TestCase
         $envelope = $envelope->withUpcastedPayload($upcastedPayload);
 
         $this->assertEquals($upcastedPayload, $envelope->payload());
-        $this->assertEquals(2, $revision);
+        $this->assertEquals(2, $envelope->revision());
     }
 }
