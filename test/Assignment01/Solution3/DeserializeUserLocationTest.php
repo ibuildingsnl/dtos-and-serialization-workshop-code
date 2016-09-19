@@ -2,6 +2,7 @@
 
 namespace Test\Assignment01\Solution3;
 
+use Assignment01\Solution3\TrackUserLocation;
 use Assignment01\Solution3\User;
 use Assignment01\Solution3\GeoLocation;
 use Illuminate\Validation\Validator;
@@ -40,8 +41,14 @@ EOD;
             $this->fail('Should not happen');
         }
 
+        $command = new TrackUserLocation();
+        //$command->id = $data['id'];
+        $command->lat = $data['lat'];
+        $command->long = $data['long'];
+
+        // fetch user by its id
         $user = new User();
-        $newLocation = new GeoLocation($data['lat'], $data['long']);
+        $newLocation = new GeoLocation($command->lat, $command->long);
         $user->trackLocation($newLocation);
 
         $this->assertEquals($newLocation, $user->location());
