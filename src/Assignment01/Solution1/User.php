@@ -30,8 +30,7 @@ final class User
 
     public function setLat(float $lat)
     {
-        Assertion::greaterOrEqualThan($lat, -90);
-        Assertion::lessOrEqualThan($lat, 90);
+        Assertion::range($lat, -90, 90);
 
         $this->lat = $lat;
     }
@@ -43,8 +42,7 @@ final class User
 
     public function setLong(float $long)
     {
-        Assertion::greaterOrEqualThan($long, -180);
-        Assertion::lessOrEqualThan($long, 180);
+        Assertion::range($long, -180, 180);
 
         $this->long = $long;
     }
