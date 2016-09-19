@@ -3,6 +3,7 @@
 namespace Assignment01\Solution1;
 
 use Assert\Assertion;
+use Assignment01\Solution3\GeoLocation;
 use JMS\Serializer\Annotation as Serializer;
 
 final class User
